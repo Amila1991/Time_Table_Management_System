@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/Time_Table_Management_System"/>
+        <property name="username" value="root"/>
+        <property name="password" value="ijse"/>
+    </bean>
+
+
+    
+
+    <bean id="buildingDao" class="com.mycompany.time_table_management_system.db.doa.building.BuildingDAOImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="classroomDao" class="com.mycompany.time_table_management_system.db.doa.classroom.ClassroomDAOImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>	
+</beans>
