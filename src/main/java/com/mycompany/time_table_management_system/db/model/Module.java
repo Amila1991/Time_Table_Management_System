@@ -13,32 +13,30 @@ public class Module  implements java.io.Serializable {
 
 
      private String moduleNo;
-     private Department department;
+     private String departmentId;
      private String moduleTitle;
-     private BigDecimal credit;
-     private Boolean isGpa;
-     private Integer lectureHours;
-     private Integer practicalHours;
-     private Set schedules = new HashSet(0);
+     private double credit;
+     private boolean isGpa;
+     private int lectureHours;
+     private int practicalHours;
 
     public Module() {
     }
 
 	
-    public Module(String moduleNo, Department department, String moduleTitle) {
+    public Module(String moduleNo, String departmentId, String moduleTitle) {
         this.moduleNo = moduleNo;
-        this.department = department;
+        this.departmentId = departmentId;
         this.moduleTitle = moduleTitle;
     }
-    public Module(String moduleNo, Department department, String moduleTitle, BigDecimal credit, Boolean isGpa, Integer lectureHours, Integer practicalHours, Set schedules) {
+    public Module(String moduleNo, String departmentId, String moduleTitle, double credit, boolean isGpa, int lectureHours, int practicalHours) {
        this.moduleNo = moduleNo;
-       this.department = department;
+       this.departmentId = departmentId;
        this.moduleTitle = moduleTitle;
        this.credit = credit;
        this.isGpa = isGpa;
        this.lectureHours = lectureHours;
        this.practicalHours = practicalHours;
-       this.schedules = schedules;
     }
    
     public String getModuleNo() {
@@ -48,12 +46,12 @@ public class Module  implements java.io.Serializable {
     public void setModuleNo(String moduleNo) {
         this.moduleNo = moduleNo;
     }
-    public Department getDepartment() {
-        return this.department;
+    public String getDepartmentId() {
+        return this.departmentId;
     }
     
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
     }
     public String getModuleTitle() {
         return this.moduleTitle;
@@ -62,11 +60,11 @@ public class Module  implements java.io.Serializable {
     public void setModuleTitle(String moduleTitle) {
         this.moduleTitle = moduleTitle;
     }
-    public BigDecimal getCredit() {
+    public double getCredit() {
         return this.credit;
     }
     
-    public void setCredit(BigDecimal credit) {
+    public void setCredit(double credit) {
         this.credit = credit;
     }
     public Boolean getIsGpa() {
@@ -76,27 +74,55 @@ public class Module  implements java.io.Serializable {
     public void setIsGpa(Boolean isGpa) {
         this.isGpa = isGpa;
     }
-    public Integer getLectureHours() {
+    public int getLectureHours() {
         return this.lectureHours;
     }
     
-    public void setLectureHours(Integer lectureHours) {
+    public void setLectureHours(int lectureHours) {
         this.lectureHours = lectureHours;
     }
-    public Integer getPracticalHours() {
+    public int getPracticalHours() {
         return this.practicalHours;
     }
     
-    public void setPracticalHours(Integer practicalHours) {
+    public void setPracticalHours(int practicalHours) {
         this.practicalHours = practicalHours;
     }
-    public Set getSchedules() {
-        return this.schedules;
-    }
+
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((moduleNo == null) ? 0 : moduleNo.hashCode());
+		return result;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Module other = (Module) obj;
+		if (moduleNo == null) {
+			if (other.moduleNo != null)
+				return false;
+		} else if (!moduleNo.equals(other.moduleNo))
+			return false;
+		return true;
+	}
     
-    public void setSchedules(Set schedules) {
-        this.schedules = schedules;
-    }
+    
 
 
 

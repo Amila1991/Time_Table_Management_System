@@ -29,20 +29,19 @@ public class ClassroomController {
 	public ModelAndView insertClassroomView() {
 		ModelAndView model = new ModelAndView("insertclassroom");
 		List<Building> buildingList = buildingDAO.getBuildingList();
-		model.addObject("ClassroomID",
-				AutoGenerate.getNextID(classroomDAO.getJdbcTemplate(), "Classroom", "Classroom_ID", "B"));
+		model.addObject("ClassroomID",AutoGenerate.getNextID(classroomDAO.getJdbcTemplate(), "Classroom", "Classroom_ID", "C"));
 		model.addObject("BuildingList", buildingList);
 		return model;
 	}
 	
 	@RequestMapping(value = "/addClassroom", method=RequestMethod.POST)
     public ModelAndView insertClassroom(@ModelAttribute("classroom") Classroom classroom,@RequestParam("selectedBuilding") String name){
-    	//classroom.setBuilding();
+		Building building=new Building();
+		building.setBuildingName(name);
+    	classroom.setBuilding(buildingDAO.getBuilding(building, "Building_Name"));
 		System.out.println(classroomDAO.insertClassroom(classroom));
-        ModelAndView model= new ModelAndView("insertclassroom");
-        System.out.println(classroom.getClassroomId()+"          "+name);
-        model.addObject("BuildingID", AutoGenerate.getNextID(buildingDAO.getJdbcTemplate(), "Building", "Building_ID", "B"));
-        return model;
+        System.out.println(classroom.getClassroomId()+"          "+name+" ");
+        return insertClassroomView().addObject("Success", "Operation is Successfully Completed....");
     }
 
 }

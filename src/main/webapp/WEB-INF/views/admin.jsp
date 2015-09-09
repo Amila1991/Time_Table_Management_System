@@ -87,16 +87,80 @@
 
                             <li class="panel panel-default" id="dropdown">
                                 <a data-toggle="collapse" href="#dropdown-lvl11">
-                                    <span class="glyphicon glyphicon-user"></span> Building <span class="caret"></span>
+                                    <span class="glyphicon glyphicon-off"></span> Building <span class="caret"></span>
                                 </a>
 
                                 <!-- Dropdown level 1 -->
                                 <div id="dropdown-lvl11" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="/controller/building/insertBuilding" target="contentframe">Add Building</a></li>
-                                            <li><a href="/controller/building/viewBuilding" target="contentframe">View Building</a></li>
-                                            <li><a href="/controller/classroom/insertClassroom" target="contentframe">Link</a></li>
+                                            <li><a href="/University_Time_Table_Management_System/building/insertBuilding" target="contentframe">Add Building</a></li>
+                                            <li><a href="/University_Time_Table_Management_System/building/viewBuilding" target="contentframe">View Building</a></li>
+                                            <li><a href="" target="contentframe">Link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="panel panel-default" id="dropdown">
+                                <a data-toggle="collapse" href="#dropdown-lvl12">
+                                    <span class="glyphicon glyphicon-ok"></span> Classroom <span class="caret"></span>
+                                </a>
+
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-lvl12" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="/University_Time_Table_Management_System/classroom/insertClassroom" target="contentframe">Add Classroom</a></li>
+                                            <li><a href="/University_Time_Table_Management_System/building/viewBuilding" target="contentframe">View Classroom</a></li>
+                                            <li><a href="" target="contentframe">Link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="panel panel-default" id="dropdown">
+                                <a data-toggle="collapse" href="#dropdown-lvl13">
+                                    <span class="glyphicon glyphicon-ok"></span> Module <span class="caret"></span>
+                                </a>
+
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-lvl13" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="/University_Time_Table_Management_System/module/insertModule" target="contentframe">Add Module</a></li>
+                                            <li><a href="/University_Time_Table_Management_System/building/viewBuilding" target="contentframe">View Module</a></li>
+                                            <li><a href="" target="contentframe">Link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="panel panel-default" id="dropdown">
+                                <a data-toggle="collapse" href="#dropdown-lvl14">
+                                    <span class="glyphicon glyphicon-ok"></span> Lecturer <span class="caret"></span>
+                                </a>
+
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-lvl14" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="/University_Time_Table_Management_System/lecturer/insertLecturer" target="contentframe">Add Lecturer</a></li>
+                                            <li><a href="/University_Time_Table_Management_System/lecturer/viewLecturer" target="contentframe">View Lecturer</a></li>
+                                            <li><a href="" target="contentframe">Link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="panel panel-default" id="dropdown">
+                                <a data-toggle="collapse" href="#dropdown-lvl15">
+                                    <span class="glyphicon glyphicon-ok"></span> Department <span class="caret"></span>
+                                </a>
+
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-lvl15" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="/University_Time_Table_Management_System/department/insertDepartment" target="contentframe">Add Department</a></li>
+                                            <li><a href="/University_Time_Table_Management_System/building/viewBuilding" target="contentframe">View Department</a></li>
+                                            <li><a href="" target="contentframe">Link</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -137,8 +201,8 @@
                                     </div>
                                 </div>
                             </li>
-
-                            <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
+                            <li><a href="/University_Time_Table_Management_System/timetable/timetablegeneration"><span class="glyphicon glyphicon-off"></span> Time Table Generation</a></li>
 
                         </ul>
                     </div><!-- /.navbar-collapse -->

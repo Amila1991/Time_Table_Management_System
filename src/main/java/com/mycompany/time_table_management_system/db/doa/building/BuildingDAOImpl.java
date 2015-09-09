@@ -10,7 +10,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import javax.sql.DataSource;
+
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,7 +33,7 @@ public class BuildingDAOImpl implements BuildingDAO {
     @Transactional
     public List<Building> getBuildingList() {
         String sql = "SELECT * FROM building";
-        List<Building> listUser = jdbcTemplate.query(sql, new RowMapper<Building>() {
+        List<Building> buildingList = jdbcTemplate.query(sql, new RowMapper<Building>() {
 
             @Override
             public Building mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -44,7 +47,7 @@ public class BuildingDAOImpl implements BuildingDAO {
 
         });
 
-        return listUser;
+        return buildingList;
     }
 
     @Override
@@ -71,9 +74,29 @@ public class BuildingDAOImpl implements BuildingDAO {
     }
 
 	@Override
-	public Building getBuilding(Building building) {
+	public Building getBuilding(Building building,String column) {
 		// TODO Auto-generated method stub
-		return null;
+		String value;
+		if(column=="Building_ID"){
+			value=building.getBuildingId();
+		}else {
+			value=building.getBuildingName();
+		}
+		System.out.println(value);
+		String sql = "SELECT * FROM building where "+column+"=?";
+		building=jdbcTemplate.query(sql,new ResultSetExtractor<Building>() {
+
+			@Override
+			public Building extractData(ResultSet rs) throws SQLException, DataAccessException {
+				Building building = new Building();
+				rs.next();
+                building.setBuildingId(rs.getString("Building_ID"));
+                building.setBuildingName(rs.getString("Building_Name"));
+
+                return building;
+			}
+		}, new Object[]{value} );
+		return building;
 	}
 
 }

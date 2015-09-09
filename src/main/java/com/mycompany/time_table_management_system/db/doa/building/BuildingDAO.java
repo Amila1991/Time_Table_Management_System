@@ -19,7 +19,7 @@ public interface BuildingDAO {
     public boolean insertBuilding(Building building);
     public boolean updateBuilding(Building building);
     public boolean deleteBuilding(Building building);
-    public Building getBuilding(Building building);
+    public Building getBuilding(Building building,String column);
     public List<Building> getBuildingList();
     public JdbcTemplate getJdbcTemplate();
 }

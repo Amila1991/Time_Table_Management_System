@@ -11,7 +11,7 @@ public interface ClassroomDAO {
 	public boolean insertClassroom(Classroom classroom);
 	public boolean deleteClassroom(Classroom classroom);
 	public boolean updateClassroom(Classroom classroom);
-	public Classroom getClassroom(Classroom classroom);
+	public Classroom getClassroom(Classroom classroom,String column);
 	public List<Classroom> getClassroomList();
 	public JdbcTemplate getJdbcTemplate();
 }

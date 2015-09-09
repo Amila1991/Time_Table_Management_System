@@ -29,4 +29,46 @@
             <ref bean="dataSource" />
         </constructor-arg>
     </bean>	
+    
+    <bean id="departmentDao" class="com.mycompany.time_table_management_system.db.doa.department.DepartmentDAOImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>
+    
+     <bean id="moduleDao" class="com.mycompany.time_table_management_system.db.doa.module.ModuleDAOImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="lecturerDao" class="com.mycompany.time_table_management_system.db.doa.lecturer.LecturerDAOImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>
+    
+     <bean id="scheduleDao" class="com.mycompany.time_table_management_system.db.doa.schedule.ScheduleDAOImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="batchDao" class="com.mycompany.time_table_management_system.db.doa.batch.BatchDAOImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="commonDao" class="com.mycompany.time_table_management_system.db.doa.common.CommonDAOImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="individualEncoder" class="com.mycompany.time_table_management_system.timetablegenarator.controller.IndivitualEncoderImpl">
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
+    </bean>
 </beans>

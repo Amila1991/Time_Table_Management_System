@@ -45,11 +45,9 @@ public class BuildingController {
     
     @RequestMapping(value = "/addBuilding", method=RequestMethod.POST)
     public ModelAndView insertBuilding(@ModelAttribute("building") Building building){
+    	System.out.println(building.getBuildingId()+"          "+building.getBuildingName());
     	System.out.println(buildingDAO.insertBuilding(building));
-        ModelAndView model= new ModelAndView("insertbuilding");
-        System.out.println(building.getBuildingId()+"          "+building.getBuildingName());
-        model.addObject("BuildingID", AutoGenerate.getNextID(buildingDAO.getJdbcTemplate(), "Building", "Building_ID", "B"));
-        return model;
+        return insertBuildingView().addObject("Success", "Operation is Successfully Completed....");
     }
     
    /* @RequestMapping(value = "/addBuilding", method=RequestMethod.POST)
