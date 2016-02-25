@@ -23,17 +23,26 @@
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                        Time Table Management System
-                    </a>
-                </div>
-                <form class="navbar-form navbar-right">
-                    <button type="submit" class="btn btn-default"><i class="">Sign out</button>
-                </form>
-            </div>
-        </nav>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Time Table Management System</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="<%=request.getContextPath()%>/admin">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="<%=request.getContextPath()%>/">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
        
 
         <div class="row">
@@ -87,16 +96,15 @@
 
                             <li class="panel panel-default" id="dropdown">
                                 <a data-toggle="collapse" href="#dropdown-lvl11">
-                                    <span class="glyphicon glyphicon-off"></span> Building <span class="caret"></span>
+                                    <span class="glyphicon glyphicon-ok"></span> Building <span class="caret"></span>
                                 </a>
 
                                 <!-- Dropdown level 1 -->
                                 <div id="dropdown-lvl11" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="/University_Time_Table_Management_System/building/insertBuilding" target="contentframe">Add Building</a></li>
-                                            <li><a href="/University_Time_Table_Management_System/building/viewBuilding" target="contentframe">View Building</a></li>
-                                            <li><a href="" target="contentframe">Link</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/building/insertBuilding" target="contentframe">Add Building</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/building/viewBuilding" target="contentframe">View Building</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -110,9 +118,8 @@
                                 <div id="dropdown-lvl12" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="/University_Time_Table_Management_System/classroom/insertClassroom" target="contentframe">Add Classroom</a></li>
-                                            <li><a href="/University_Time_Table_Management_System/building/viewBuilding" target="contentframe">View Classroom</a></li>
-                                            <li><a href="" target="contentframe">Link</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/classroom/insertClassroom" target="contentframe">Add Classroom</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/classroom/viewClassroom" target="contentframe">View Classroom</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -126,9 +133,8 @@
                                 <div id="dropdown-lvl13" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="/University_Time_Table_Management_System/module/insertModule" target="contentframe">Add Module</a></li>
-                                            <li><a href="/University_Time_Table_Management_System/building/viewBuilding" target="contentframe">View Module</a></li>
-                                            <li><a href="" target="contentframe">Link</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/module/insertModule" target="contentframe">Add Module</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/module/viewModule" target="contentframe">View Module</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -142,8 +148,8 @@
                                 <div id="dropdown-lvl14" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="/University_Time_Table_Management_System/lecturer/insertLecturer" target="contentframe">Add Lecturer</a></li>
-                                            <li><a href="/University_Time_Table_Management_System/lecturer/viewLecturer" target="contentframe">View Lecturer</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/lecturer/insertLecturer" target="contentframe">Add Lecturer</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/lecturer/viewLecturer" target="contentframe">View Lecturer</a></li>
                                             <li><a href="" target="contentframe">Link</a></li>
                                         </ul>
                                     </div>
@@ -158,52 +164,16 @@
                                 <div id="dropdown-lvl15" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="/University_Time_Table_Management_System/department/insertDepartment" target="contentframe">Add Department</a></li>
-                                            <li><a href="/University_Time_Table_Management_System/building/viewBuilding" target="contentframe">View Department</a></li>
-                                            <li><a href="" target="contentframe">Link</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/department/insertDepartment" target="contentframe">Add Department</a></li>
+                                            <li><a href="<%=request.getContextPath()%>/department/viewDepartment" target="contentframe">View Department</a></li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
                             </li>
-                            <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
-
-                            <!-- Dropdown-->
-                            <li class="panel panel-default" id="dropdown">
-                                <a data-toggle="collapse" href="#dropdown-lvl1">
-                                    <span class="glyphicon glyphicon-user"></span> Sub Level <span class="caret"></span>
-                                </a>
-
-                                <!-- Dropdown level 1 -->
-                                <div id="dropdown-lvl1" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul class="nav navbar-nav">
-                                            <li><a href="#">Link</a></li>
-                                            <li><a href="#">Link</a></li>
-                                            <li><a href="#">Link</a></li>
-
-                                            <!-- Dropdown level 2 -->
-                                            <li class="panel panel-default" id="dropdown">
-                                                <a data-toggle="collapse" href="#dropdown-lvl2">
-                                                    <span class="glyphicon glyphicon-off"></span> Sub Level <span class="caret"></span>
-                                                </a>
-                                                <div id="dropdown-lvl2" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                        <ul class="nav navbar-nav">
-                                                            <li><a href="#">Link</a></li>
-                                                            <li><a href="#">Link</a></li>
-                                                            <li><a href="#">Link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-							<li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
-                            <li><a href="/University_Time_Table_Management_System/timetable/timetablegeneration"><span class="glyphicon glyphicon-off"></span> Time Table Generation</a></li>
-
+                            <li><a href="<%=request.getContextPath()%>/timetable/timetablegeneration"><span class="glyphicon glyphicon-off"></span> Time Table Generation</a></li>
+							<li><a href="<%=request.getContextPath()%>/timetable/timetableview" target="contentframe"><span class="glyphicon glyphicon-off"></span> View Time Table</a></li>
+							
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -211,7 +181,7 @@
         </div>
         <div class="container-fluid">
             <div class="side-body">
-                    <iframe name="contentframe" src="" style="border:none" width="100%" height="700px"></iframe>
+                    <iframe name="contentframe"  src="<%=request.getContextPath()%>/timetable/timetableview" style="border:none" width="100%" height="700px"></iframe>
             </div>
         </div>
     </body>
